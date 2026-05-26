@@ -12,10 +12,10 @@ public:
     std::string data;
     std::string prvHash;
     std::string hash;
-    std::string height;
     std::string hashString();
-    std::string bIndex(BlockChain& blockchain);
+    std::string bIndex(BlockChain& blockchain, Block block);
     std::string prevHash(BlockChain& blockchain);
+    std::string timeStamp();
 };
 
 #endif
