@@ -28,5 +28,6 @@ void BlockChain::printChain() {
         std::cout << "Data: " << chain[i].data << std::endl;
         std::cout << "Previous Hash: " << chain[i].prvHash << std::endl;
         std::cout << "Hash: " << chain[i].hash << std::endl;
+        std::cout << std::endl;
     }
 }

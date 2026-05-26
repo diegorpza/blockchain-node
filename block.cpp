@@ -7,10 +7,11 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+#include "sha256.h"
 
 
 std::string Block::hashString() {
-    return index + tStamp + data + prvHash;
+    return sha256(index + tStamp + data + prvHash);
 }
 
 std::string Block::prevHash(BlockChain& blockchain) {

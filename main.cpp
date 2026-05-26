@@ -3,6 +3,10 @@
 #include <vector>
 #include "BlockChain.h"
 #include "Block.h"
+#include <openssl/sha.h>
+#include <sstream>
+#include <iomanip>
+#include "sha256.h"
 
 class BlockChain;
 class Block;
