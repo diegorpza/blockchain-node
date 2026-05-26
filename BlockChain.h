@@ -12,6 +12,8 @@ class BlockChain {
 
         bool isValid();
 
+        void printChain();
+
 };
 
 #endif

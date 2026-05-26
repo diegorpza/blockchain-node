@@ -1,8 +1,14 @@
 #include "BlockChain.h"
 #include <vector>
 #include "Block.h"
+#include <iostream>
 
 void BlockChain::addBlock(Block block) {
+    block.index = std::to_string(chain.size() + 1);
+    block.tStamp = block.timeStamp();
+    block.prvHash = block.prevHash(*this);
+    block.hash = block.hashString();
+
     chain.push_back(block);
 }
 
@@ -13,4 +19,14 @@ bool BlockChain::isValid() {
             }
         }
         return true;
+}
+
+void BlockChain::printChain() {
+    for (int i = 0; i < chain.size(); i++) {
+        std::cout << "Block: " << chain[i].index << std::endl;
+        std::cout << "Timestamp: " << chain[i].tStamp << std::endl;
+        std::cout << "Data: " << chain[i].data << std::endl;
+        std::cout << "Previous Hash: " << chain[i].prvHash << std::endl;
+        std::cout << "Hash: " << chain[i].hash << std::endl;
+    }
 }

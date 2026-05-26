@@ -13,18 +13,9 @@ std::string Block::hashString() {
     return index + tStamp + data + prvHash;
 }
 
-std::string Block::bIndex(BlockChain& blockchain, Block block) {
-       for (int i = 0; i < blockchain.chain.size(); i++) {
-           if (blockchain.chain[i].hash == block.hash) {
-               return std::to_string(i+1);
-           }
-       }
-       return "-1";
-    }
-
 std::string Block::prevHash(BlockChain& blockchain) {
     if (blockchain.chain.empty()) {
-        return "1";
+        return "none";
     }
     int i = blockchain.chain.size() - 1;
     return blockchain.chain[i].hash;
