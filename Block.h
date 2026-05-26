@@ -3,6 +3,8 @@
 
 #include <string>
 
+class BlockChain;
+
 class Block {
 public:
     std::string index;
@@ -11,8 +13,9 @@ public:
     std::string prvHash;
     std::string hash;
     std::string height;
-
     std::string hashString();
+    std::string bIndex(BlockChain& blockchain);
+    std::string prevHash(BlockChain& blockchain);
 };
 
 #endif

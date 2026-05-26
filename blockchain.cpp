@@ -1,5 +1,6 @@
 #include "Blockchain.h"
 #include <vector>
+#include "Block.h"
 
 void BlockChain::addBlock(Block block) {
     chain.push_back(block);
