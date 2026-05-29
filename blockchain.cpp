@@ -7,8 +7,8 @@ void BlockChain::addBlock(Block block) {
     block.index = std::to_string(chain.size() + 1);
     block.tStamp = block.timeStamp();
     block.prvHash = block.prevHash(*this);
+    block.nonce = block.nonce;
     block.hash = block.hashString();
-
     chain.push_back(block);
 }
 
@@ -27,6 +27,7 @@ void BlockChain::printChain() {
         std::cout << "Timestamp: " << chain[i].tStamp << std::endl;
         std::cout << "Data: " << chain[i].data << std::endl;
         std::cout << "Previous Hash: " << chain[i].prvHash << std::endl;
+        std::cout << "Nonce: " << chain[i].nonce << std::endl;
         std::cout << "Hash: " << chain[i].hash << std::endl;
         std::cout << std::endl;
     }

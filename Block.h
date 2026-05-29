@@ -12,6 +12,7 @@ public:
     std::string data;
     std::string prvHash;
     std::string hash;
+    int nonce = 0;
     std::string hashString();
     std::string prevHash(BlockChain& blockchain);
     std::string timeStamp();

@@ -11,7 +11,7 @@
 
 
 std::string Block::hashString() {
-    return sha256(index + tStamp + data + prvHash);
+    return sha256(index + tStamp + data + prvHash + std::to_string(nonce));
 }
 
 std::string Block::prevHash(BlockChain& blockchain) {
