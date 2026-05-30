@@ -15,11 +15,9 @@ using namespace std;
 int main() {
     BlockChain blockchain;
     Block genesis;
-    genesis.data = "Test";
     blockchain.addBlock(genesis);
 
     Block second;
-    second.data = "Hello";
     blockchain.addBlock(second);
 
     blockchain.printChain();

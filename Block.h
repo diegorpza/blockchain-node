@@ -1,10 +1,9 @@
 #ifndef BLOCK_H
 #define BLOCK_H
-
 #include <string>
 
-class BlockChain;
 
+class BlockChain;
 class Block {
 public:
     std::string index;
@@ -16,6 +15,7 @@ public:
     std::string hashString();
     std::string prevHash(BlockChain& blockchain);
     std::string timeStamp();
+    std::string blockData();
 };
 
 #endif

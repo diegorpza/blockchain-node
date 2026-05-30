@@ -9,6 +9,7 @@ void BlockChain::addBlock(Block block) {
     block.prvHash = block.prevHash(*this);
     block.nonce = block.nonce;
     block.hash = block.hashString();
+    block.data = block.blockData();
     chain.push_back(block);
 }
 
