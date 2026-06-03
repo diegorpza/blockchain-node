@@ -10,8 +10,8 @@ void BlockChain::addBlock(Block block) {
     block.prvHash = block.prevHash(*this);
     block.nonce = 0;
 
-    TransactionPool TX;
-    block.data = TX.transactions();
+    Transaction transaction;
+    block.data = transaction.transactions();
 
     block.hash = block.hashString();
     chain.push_back(block);

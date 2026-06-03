@@ -7,19 +7,25 @@
 #include <sstream>
 #include <iomanip>
 #include "sha256.h"
+#include "transactions.h"
 
 class BlockChain;
 class Block;
+class Transaction;
+class TransactionPool;
+
 using namespace std;
 
 int main() {
-    BlockChain blockchain;
-    Block genesis;
-    blockchain.addBlock(genesis);
+    TransactionPool transPOOL;
 
-    Block second;
-    blockchain.addBlock(second);
+    Transaction transaction1;
 
-    blockchain.printChain();
+    transPOOL.addTX(transaction1);
+
+    Transaction transaction2;
+    transPOOL.addTX(transaction2);
+
+    transPOOL.printTX();
 
 }
