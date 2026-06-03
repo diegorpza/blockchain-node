@@ -33,24 +33,3 @@ std::string Block::timeStamp() {
 
     return ss.str();
 }
-
-std::string Block::blockData() {
-    std::string receiver, name;
-    int amount = 0;
-
-    std::cout << "Name: ";
-    std::cin >> name;
-    std::cout << std::endl;
-
-    std::cout << "Who do you want to pay: ";
-    std::cin >> receiver;
-    std::cout << std::endl;
-
-    std::cout << "Amount: ";
-    std::cin >> amount;
-    std::cout << std::endl;
-
-    data = name + " payed " + receiver + " " + std::to_string(amount);
-
-    return data;
-}

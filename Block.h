@@ -15,7 +15,6 @@ public:
     std::string hashString();
     std::string prevHash(BlockChain& blockchain);
     std::string timeStamp();
-    std::string blockData();
 };
 
 #endif

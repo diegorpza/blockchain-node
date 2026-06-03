@@ -1,15 +1,19 @@
 #include "BlockChain.h"
 #include <vector>
 #include "Block.h"
+#include "transactions.h"
 #include <iostream>
 
 void BlockChain::addBlock(Block block) {
     block.index = std::to_string(chain.size() + 1);
     block.tStamp = block.timeStamp();
     block.prvHash = block.prevHash(*this);
-    block.nonce = block.nonce;
+    block.nonce = 0;
+
+    TransactionPool TX;
+    block.data = TX.transactions();
+
     block.hash = block.hashString();
-    block.data = block.blockData();
     chain.push_back(block);
 }
 
