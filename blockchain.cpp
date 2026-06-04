@@ -11,7 +11,7 @@ void BlockChain::addBlock(Block block) {
     block.nonce = 0;
 
     Transaction transaction;
-    block.data = transaction.transactions();
+    block.data = transaction.createTransaction();
 
     block.hash = block.hashString();
     chain.push_back(block);
