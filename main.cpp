@@ -17,15 +17,13 @@ class TransactionPool;
 using namespace std;
 
 int main() {
-    TransactionPool transPOOL;
+    BlockChain blockchain;
 
-    Transaction transaction1;
+    Block genesis;
+    blockchain.addBlock(genesis);
+    Block second;
+    blockchain.addBlock(genesis);
+    blockchain.printChain();
 
-    transPOOL.addTX(transaction1);
-
-    Transaction transaction2;
-    transPOOL.addTX(transaction2);
-
-    transPOOL.printTX();
 
 }
