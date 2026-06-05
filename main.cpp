@@ -8,6 +8,7 @@
 #include <iomanip>
 #include "sha256.h"
 #include "transactions.h"
+#include "node.h"
 
 class BlockChain;
 class Block;
@@ -17,13 +18,11 @@ class TransactionPool;
 using namespace std;
 
 int main() {
-    BlockChain blockchain;
+    Node node;
+    Transaction transaction;
 
-    Block genesis;
-    blockchain.addBlock(genesis);
-    Block second;
-    blockchain.addBlock(genesis);
-    blockchain.printChain();
+    transaction.createTransaction();
 
+    node.isTXValid(transaction);
 
 }
